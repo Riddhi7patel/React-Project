@@ -1,0 +1,20 @@
+body { 
+   background-color: burlywood;
+   color: rgb(227, 227, 227);
+
+}
+.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    justify-content: center;
+}
+
+li {
+   list-style-type: none;
+}
+.center {
+    text-align: center;
+    color: black;
+}

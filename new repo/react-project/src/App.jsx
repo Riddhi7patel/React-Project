@@ -22,8 +22,8 @@ onSubmit(event) {
   render() {
     return (
       <div>
-        <h1>Hello World</h1>
-        <form onSubmit={this.onSubmit}>
+        <h1 className="center">Studio Ghibli Films</h1>
+        {/* <form onSubmit={this.onSubmit}>
         <input 
         type="text" 
         name="text"
@@ -36,7 +36,7 @@ onSubmit(event) {
           {this.state.list.map((item, idx)=> {
             return <li key={item + idx}>{item}</li>
           })}
-        </ul>
+        </ul> */}
         <FilmsList />
       </div>
     );

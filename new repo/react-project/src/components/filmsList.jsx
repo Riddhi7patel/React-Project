@@ -1,4 +1,5 @@
 import { Component } from "react";
+import "./filmListStyle.css"
 
 class FilmsList extends Component {
   constructor(props) {
@@ -22,9 +23,15 @@ class FilmsList extends Component {
 
   render() {
     return (
-      <ul>
+      <ul className="tiles">
         {this.state.list.map((film) => {
-          return <li key={film.id}>{film.title}</li>;
+          return ( <li key={film.id}>
+            <h2>{film.title}</h2>
+            <a href={`${film.movie_banner}`}>
+            <img src={`${film.image}`} alt="" />
+            </a>
+          </li>
+          );
         })}
       </ul>
     );
