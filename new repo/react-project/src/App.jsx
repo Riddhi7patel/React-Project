@@ -1,6 +1,6 @@
 import { Component } from "react";
 import './App.css';
-import FilmsList from "./components/filmsList";
+// import FilmsList from "./components/filmsList";
 
 class App extends Component {
   constructor(props) {
@@ -22,8 +22,8 @@ onSubmit(event) {
   render() {
     return (
       <div>
-        <h1 className="center">Studio Ghibli Films</h1>
-        {/* <form onSubmit={this.onSubmit}>
+        <h1 className="center">hello World</h1>
+        <form onSubmit={this.onSubmit}>
         <input 
         type="text" 
         name="text"
@@ -36,8 +36,8 @@ onSubmit(event) {
           {this.state.list.map((item, idx)=> {
             return <li key={item + idx}>{item}</li>
           })}
-        </ul> */}
-        <FilmsList />
+        </ul>
+        {/* <FilmsList /> */}
       </div>
     );
   }
