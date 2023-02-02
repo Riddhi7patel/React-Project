@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+.center {
+  text-align: center;
+  color: blueviolet;
+  cursor: pointer;
+}
+
+body{
+  background-color: bisque;
+}
+.studio:hover {
+  text-decoration: underline;
+  color: #282c34;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
