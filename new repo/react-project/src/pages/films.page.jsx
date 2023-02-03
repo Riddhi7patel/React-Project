@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
-import { filterFilmsByDirector, getListOf } from "../helpers/film.helpers";
+import {
+  filterFilmsByDirector,
+  getListOf,
+  getFilmsStats,
+} from "../helpers/film.helpers";
+import { Link } from "react-router-dom";
 
-function FilmsPage() {
+function FilmsPage(props) {
   let [list, setList] = useState([]);
   let [searchDirector, setSearchDirector] = useState("");
 
   function getFilms() {
-    fetch("https://studioghibliapi-d6fc8.web.app/films")
+    fetch("https://studioghibliapi-d6fc8.web.app/films/${id}")
       .then((response) => response.json())
       .then((films) => setList(films))
       .catch((error) => console.error(error));
@@ -18,13 +23,12 @@ function FilmsPage() {
 
   let filmsByDirector = filterFilmsByDirector(list, searchDirector);
   let directors = getListOf(list, "director");
+  let { avg_score, latest, total } = getFilmsStats(filmsByDirector);
 
   return (
     <div>
-      <div className="header">
       <h1 className="center"><span className="studio">Studio Ghibli Films</span></h1>
       <form>
-        <div className="form-group">
         <label htmlFor="searchDirector">Filter By Director</label>
         <select
           name="searchDirector"
@@ -41,24 +45,36 @@ function FilmsPage() {
             );
           })}
         </select>
-        </div>
       </form>
+      <div>
+        <div>
+          <span># Of Films</span>
+          <span>{total}</span>
+        </div>
+        <div>
+          <span>Average Rating</span>
+          <span>{avg_score.toFixed(2)}</span>
+        </div>
+        <div>
+          <span>Latest Film</span>
+          <span>{latest}</span>
+        </div>
       </div>
-      <ul>
+      <ul className="tiles">
         {filmsByDirector.map((film) => {
-          return <li key={film.id}>{film.title}</li>;
+          return (
+            <li key={film.id}>
+              <Link to={`/films/${film.id}`}>
+                {film.title}</Link>
+                {/* <a href={`${film.movie_banner}`}>
+                  <img src={`${film.image}`} alt="Film Poster" />
+                </a> */}
+            </li>
+          );
         })}
       </ul>
-      </div>
+    </div>
   );
 }
 
 export default FilmsPage;
-
-  
-
-
-  
-  
-
-

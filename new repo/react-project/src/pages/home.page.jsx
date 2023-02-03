@@ -27,7 +27,7 @@ function HomePage() {
       </form>
       <ul>
         {list.map((item, index) => {
-          return <li key={index}>{item}</li>;
+          return <li key={item + index}>{item}</li>;
         })}
       </ul>
     </div>

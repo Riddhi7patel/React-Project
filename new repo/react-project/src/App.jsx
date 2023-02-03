@@ -1,7 +1,8 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, NavLink,} from "react-router-dom"
-import { HomePage, FilmsPage } from "./pages";
+import { HomePage, FilmsPage, SingleFilmPage} from "./pages";
 import './components/filmListStyle.css'
+
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="films" element={<FilmsPage />} />
+        <Route path="films/:id" element={<SingleFilmPage />} />
       </Routes>
     </BrowserRouter>
   );
