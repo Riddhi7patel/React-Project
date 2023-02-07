@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom';
 
 export default function SingleFilmPage() {
     let [item, setItem] = useState({});
-
-    let {id} = useParams;
+    let {id} = useParams();
 
    function getFilm() {
     fetch(`https://studioghibliapi-d6fc8.web.app/films/${id}`)

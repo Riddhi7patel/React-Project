@@ -26,3 +26,6 @@ li {
     gap: 1rem;
     font-size: large;
 }
+.director-data {
+    align-items: center;
+}

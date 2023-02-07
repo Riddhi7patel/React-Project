@@ -23,8 +23,8 @@ function FilmsPage(props) {
 
   return (
     <div>
-    <div className="filmHraderSection">
-      <h1 className="H1-center"><span className="studio">Studio Ghibli Films</span></h1>
+    <div className="filmHeader">
+      <h1 className="center"><span className="studio">Studio Ghibli Films</span></h1>
       <form>
          <div className="form-group">
              <label htmlFor="searchDirector">Filter By Director</label>
